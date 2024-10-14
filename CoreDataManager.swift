@@ -8,6 +8,84 @@
 import Foundation
 import CoreData
 
+//MARK: - ESSENTIAL PREDICATE
+/**
+// 1. Equality (=)
+let predicate = NSPredicate(format: "name == %@", "John")
+// SQL Equivalent:
+SELECT * FROM Entity WHERE name = 'John';
+
+// 2. Inequality (!=)
+let predicate = NSPredicate(format: "age != %d", 25)
+// SQL Equivalent:
+SELECT * FROM Entity WHERE age != 25;
+
+// 3. Greater Than (>)
+let predicate = NSPredicate(format: "age > %d", 18)
+// SQL Equivalent:
+SELECT * FROM Entity WHERE age > 18;
+
+// 4. Less Than (<)
+let predicate = NSPredicate(format: "salary < %f", 50000.0)
+// SQL Equivalent:
+SELECT * FROM Entity WHERE salary < 50000.0;
+
+// 5. BETWEEN
+let predicate = NSPredicate(format: "age BETWEEN {18, 30}")
+// SQL Equivalent:
+SELECT * FROM Entity WHERE age BETWEEN 18 AND 30;
+
+// 6. LIKE (Wildcard Matching)
+let predicate = NSPredicate(format: "name LIKE[c] %@", "J*")
+// SQL Equivalent:
+SELECT * FROM Entity WHERE name LIKE 'J%';
+
+// 7. CONTAINS
+let predicate = NSPredicate(format: "name CONTAINS[c] %@", "John")
+// SQL Equivalent:
+SELECT * FROM Entity WHERE name LIKE '%John%';
+
+// 8. IN
+let predicate = NSPredicate(format: "name IN %@", ["John", "Jane", "Alice"])
+// SQL Equivalent:
+SELECT * FROM Entity WHERE name IN ('John', 'Jane', 'Alice');
+
+// 9. AND Condition
+let predicate = NSPredicate(format: "name == %@ AND age > %d", "John", 20)
+// SQL Equivalent:
+SELECT * FROM Entity WHERE name = 'John' AND age > 20;
+
+// 10. OR Condition
+let predicate = NSPredicate(format: "name == %@ OR age < %d", "John", 18)
+// SQL Equivalent:
+SELECT * FROM Entity WHERE name = 'John' OR age < 18;
+
+// 11. NOT Condition
+let predicate = NSPredicate(format: "NOT (name == %@)", "John")
+// SQL Equivalent:
+SELECT * FROM Entity WHERE NOT (name = 'John');
+
+// 12. NULL Check
+let predicate = NSPredicate(format: "address == nil")
+// SQL Equivalent:
+SELECT * FROM Entity WHERE address IS NULL;
+
+// 13. SUBQUERY
+let predicate = NSPredicate(format: "SUBQUERY(employees, $x, $x.salary > 50000).@count > 0")
+// SQL Equivalent:
+SELECT * FROM Entity WHERE (SELECT COUNT(*) FROM employees WHERE salary > 50000) > 0;
+
+// 14. Aggregate Functions (COUNT)
+let predicate = NSPredicate(format: "employees.@count >= %d", 5)
+// SQL Equivalent:
+SELECT * FROM Entity WHERE (SELECT COUNT(*) FROM employees) >= 5;
+
+// 15. SELF Comparison
+let predicate = NSPredicate(format: "SELF == %@", someObject)
+// SQL Equivalent:
+SELECT * FROM Entity WHERE Entity = someObject;
+*/
+
 // MARK: - CoreDataStackProtocl
 
 /// Protocol that defines the core functionalities of a Core Data stack.
