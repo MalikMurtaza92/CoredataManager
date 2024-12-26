@@ -195,12 +195,12 @@ protocol CoreDataManagerProtocol {
 final class CoreDataManager<Entity: NSManagedObject>: CoreDataManagerProtocol {
     
     // The Core Data stack responsible for managing the persistent container and context.
-    private let stack: CoreDataStackProtocl
+    private let stack: CoreDataStackProtocol
     
     /// Initializes the Core Data manager with a given Core Data stack.
     ///
     /// - Parameter stack: The Core Data stack that provides access to the context and persistent container.
-    init(stack: CoreDataStackProtocl) {
+    init(stack: CoreDataStackProtocol) {
         self.stack = stack
     }
     
