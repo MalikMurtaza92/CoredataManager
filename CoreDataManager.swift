@@ -91,7 +91,7 @@ SELECT * FROM Entity WHERE Entity = someObject;
 /// Protocol that defines the core functionalities of a Core Data stack.
 /// It provides access to the `NSPersistentContainer` and `NSManagedObjectContext`
 /// and also contains a method to save changes to the context.
-protocol CoreDataStackProtocl {
+protocol CoreDataStackProtocol {
     
     /// The persistent container that holds the Core Data stack, including the
     /// managed object model, persistent store coordinator, and managed object context.
@@ -108,7 +108,7 @@ protocol CoreDataStackProtocl {
 
 /// A concrete implementation of `CoreDataStackProtocl` that manages the Core Data stack
 /// and provides an interface to save and retrieve data from the Core Data database.
-final class CoreDataStack: CoreDataStackProtocl {
+final class CoreDataStack: CoreDataStackProtocol {
     
     // The persistent container used for managing the Core Data stack.
     let persistantContainer: NSPersistentContainer
